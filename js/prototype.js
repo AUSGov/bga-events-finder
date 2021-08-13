@@ -5,11 +5,11 @@
 $(document).ready(function () {
     
     // Max amount for grants 'showing. and function to keep number between 0 and max_showing.
-    var max_showing = 587;
+    var max_showing = 131;
     var max_min_count = function(number){
         var count = number;
-        if (count > 587) {
-            count = 587;
+        if (count > 131) {
+            count = 131;
         } else if (count < 10) {
             count = 11;
         }
@@ -44,19 +44,19 @@ $(document).ready(function () {
     });
     $('#navbarDropdownMenuLink_2').on('click', function(e){
         e.preventDefault();
-        window.location.pathname = "/bga-grants-and-programs/finder/tool.html";
+        window.location.pathname = "/bga-events-finder/finder/tool.html";
     });
     $('#navbarDropdownMenuLink_3').on('click', function(e){
         e.preventDefault();
-        window.location.pathname = "/bga-grants-and-programs/expertise-and-advice.html";
+        window.location.pathname = "/bga-events-finder/expertise-and-advice.html";
     });
     $('#navbarDropdownMenuLink_4').on('click', function(e){
         e.preventDefault();
-        window.location.pathname = "/bga-grants-and-programs/events-and-training.html";
+        window.location.pathname = "/bga-events-finder/events/events-finder.html";
     });
     $('#navbarDropdownMenuLink_5').on('click', function(e){
         e.preventDefault();
-        window.location.pathname = "/bga-grants-and-programs/news.html";
+        window.location.pathname = "/bga-events-finder/news.html";
     }); 
 
     // Mobile nav (for the moble test version only)
@@ -68,11 +68,11 @@ $(document).ready(function () {
     
     $('.mobile-test #navbarDropdownMenuLink_0').on('click', function(e){
         e.preventDefault();
-        window.location.pathname = "/bga-grants-and-programs/registrations";     
+        window.location.pathname = "/bga-events-finder/registrations";     
     });
     $('.mobile-test #navbarDropdownMenuLink_1').on('click', function(e){
         e.preventDefault();
-        window.location.pathname = "/bga-grants-and-programs/planning";
+        window.location.pathname = "/bga-events-finder/planning";
     });
     
     $('#ChangeToggle').on('click', function(){
@@ -203,7 +203,7 @@ $(document).ready(function () {
         }
     });
     
-    
+
    
     // Modal functionality
     // Empty href modal
@@ -235,351 +235,7 @@ $(document).ready(function () {
         $(".modal-wrapper").addClass("active");
         $(".modal-background").addClass("active");
     });
-    
-    /*$(".name-search button").on("click", function(){
-        $(".modal-wrapper").addClass("active");
-        $(".modal-background").addClass("active");
-    });*/
-     
 
-    // FINDER ALT LINK and VIEW RESULTS - scroll to results      
-    $('.alt-link').on('click', function(){
-        $('html, body').animate({
-            scrollTop: $('.showing-results').offset().top
-        }, 500);
-    });
-    $('.view-results').on('click', function(){
-        $('html, body').animate({
-            scrollTop: $('.showing-results').offset().top
-        }, 500);
-    });
-    // Mobile test only
-    $('.mobile-test .alt-link').on('click', function(){
-        $( ".mobile-test" ).scrollTop( 1080 );
-    });
-    $('.mobile-test .view-results').on('click', function(){
-        $( ".mobile-test" ).scrollTop( 580 );
-    });
-
-    
-    // SHORTLIST 
-    // on page load add existing shortlisted items saved on sessionStorage
-    var current_shortlist = sessionStorage.getItem('shortlist');
-    var shortlist_count = sessionStorage.getItem('shortlist count');
-    
-    if(shortlist_count === null) {
-        shortlist_count = '0';
-    }
-    
-    $('.shortlist-links ul').prepend(current_shortlist);
-    $('.shortlist-counter').text(shortlist_count);
-    $('.shortlist-btn-counter').text(shortlist_count);
-    
-    
-    if (shortlist_count != "0") {
-        $('.empty-shortlist').addClass('inactive');
-    } else {
-        $('.empty-shortlist').removeClass('inactive');
-    }
-    
-    var shortlist_items = ['shortlist-1', 'shortlist-2', 'shortlist-3', 'shortlist-4','shortlist-5', 'shortlist-6', 'shortlist-7', 'shortlist-8', 'shortlist-9', 'shortlist-10', 'shortlist-11', 'shortlist-12', 'shortlist-13', 'shortlist-14', 'shortlist-15', 'shortlist-16', 'shortlist-17', 'shortlist-18', 'shortlist-19', 'shortlist-20'];
-    
-    for( var item = 0; item < shortlist_items.length; item++){
-        var item_state = sessionStorage.getItem(shortlist_items[item]);
-        
-        if (item_state === "shortlisted") {
-            $('#' + shortlist_items[item] + ' .shortlist').addClass('shortlisted');
-        }   
-    } 
-    
-    // Shortlist scrollable section
-    $(".shortlist-wrapper .scrollable").on("scroll", function() {
-            
-        var scroll_wrapper = $(this).parents('.shortlist-wrapper'),
-            scroll_position = $(this).scrollTop(),
-            scroll_height = $(this)[0].scrollHeight,
-            container_height = $(this).innerHeight(),
-            scroll_done = scroll_height - container_height - 10;
-
-        if (scroll_position === 0) {
-            scroll_wrapper.removeClass('scrolling');
-        } else if (scroll_position >= scroll_done) {
-            scroll_wrapper.addClass("scroll-done");
-            scroll_wrapper.removeClass('scrolling');
-        } else {
-            scroll_wrapper.removeClass("scroll-done");
-            scroll_wrapper.addClass('scrolling');
-        }  
-    });
-  
-    
-    // Add or remove items from the shortlist (using link on results cards)
-     $(document).on('click', ".shortlist", function(){
-        
-        // Animate the changing number
-        var animDuration = 400;
-
-        if ($(window).width() < 769 ) {
-            $(".shortlist-btn-counter").animate({
-                 now: '+=200'
-             }, {
-                    duration: animDuration,
-                    step: function (now, fx) {
-                     $(this).css({'width': '22px',
-                                  'height': '22px',
-                                  'font-size': '13px',
-                                  'background-color': '#254f90'
-                                 });
-                    }
-                });
-
-                $('.shortlist-btn-counter').animate({
-                 now: '-=400'
-             }, {
-                    duration: animDuration,
-                    step: function (now, fx) {
-                     $(this).css({'width': '20px',
-                                  'height': '20px',
-                                  'font-size': '12px',
-                                  'background-color': '#2F70BF'
-                                 });
-                 }
-            });
-        } else {
-            $(".shortlist-btn-counter").animate({
-             now: '+=200'
-         }, {
-                duration: animDuration,
-                step: function (now, fx) {
-                 $(this).css({'width': '30px',
-                              'height': '30px',
-                              'font-size': '17px',
-                              'top': '1px',
-                              'right': '7px',
-                              'background-color': '#254f90'
-                             });
-                }
-            });
-
-            $('.shortlist-btn-counter').animate({
-             now: '-=400'
-         }, {
-                duration: animDuration,
-                step: function (now, fx) {
-                 $(this).css({'width': '28px',
-                              'height': '28px',
-                              'font-size': '16px',
-                              'top': '2px',
-                              'right': '8px',
-                              'background-color': '#2F70BF'
-                             });
-             }
-            });
-        }
-         
-       
-        var parent_card = $(this).parents('.search-card-standard-content'),
-            grant = parent_card.find('.search-card-content-type').text(),
-            description = parent_card.find('h5').text(),
-            shortlist_li = '<li><span></span><a href="">'+grant+"</a><p>"+description+"</p></li>",
-            shortlist_li_text = grant + description,
-            count = parseInt($('.shortlist-btn-counter').text()),
-            shortlist_number = $(this).parents('.search-result-card').attr('id');
-        
-        if ( $(this).hasClass('shortlisted')) {
-            
-            sessionStorage.setItem(shortlist_number, '');
-            
-            $(this).find('p').text('Add to shortlist');
-            $(this).removeClass('shortlisted');
-            
-            $('.shortlist-links li').each(function(){
-                if ($(this).text() == shortlist_li_text) {
-                    $(this).remove();
-                }
-            });
-            $('.shortlist-btn-counter').text(count - 1);
-            $('.shortlist-counter').text(count - 1);
-            
-            if( $('.shortlist-btn-counter').text() == '0' ) {
-                $('.empty-shortlist').removeClass('inactive');
-            } else {
-                $('.empty-shortlist').addClass('inactive');
-            }
-            
-        } else {
-            $(this).find('p').text('Remove from shortlist');
-            $(this).addClass('shortlisted'); 
-            
-            sessionStorage.setItem(shortlist_number, 'shortlisted');
-            
-            $('.shortlist-links ul').prepend(shortlist_li);
-            
-            $('.shortlist-counter').text(count + 1);
-            $('.shortlist-btn-counter').text(count + 1);
-            
-            if( $('.shortlist-btn-counter').text() == '0' ) {
-                $('.empty-shortlist').removeClass('inactive');
-            } else {
-                $('.empty-shortlist').addClass('inactive');
-            }
-        }
-        
-        var current_shortlist = $('.shortlist-links ul').html();
-        sessionStorage.setItem('shortlist', current_shortlist );
-         
-        var shortlist_count = $('.shortlist-counter').text();
-        sessionStorage.setItem('shortlist count', shortlist_count);
-         
-        
-    });
-    
-    // Reset shortlist counter size on screen resize
-    $(window).on('resize', function(){
-        if ($(window).width() < 769 ) {
-            $('.shortlist-btn-counter').css({'width': '20px', 'height': '20px', 'font-size': '12px', 'top': '0px', 'right': '0px' });
-        } 
-        else {$('.shortlist-btn-counter').css({'width': '28px', 'height': '28px', 'font-size': '16px', 'top': '2px', 'right': '8px'});
-        }
-        
-        var scroll_container = $('.shortlist-wrapper .scrollable');
-        if(scroll_container[0].scrollHeight === scroll_container.innerHeight()){
-           $('.shortlist-wrapper').addClass('no-overflow');
-        } else {
-            scroll_container.removeClass('no-overflow');
-        }
-    });
-    
-    // Remove items from shortlist (in the shortlist modal)  
-    $(document).on('click', '.shortlist-links li span', function(){
-        var count = parseInt($('.shortlist-btn-counter').text()),
-            grant = $(this).parent('li').find('a').text();
-         
-        $(this).parent('li').remove();
-        $('.search-card-content-type').each(function(){
-            if ( $(this).text() == grant ){
-                $(this).parents('.search-card-standard-content').find('.shortlist').removeClass('shortlisted'); 
-                $(this).parents('.search-card-standard-content').find('.toggle-shortlist').text('Add to shortlist');
-            }
-        });
-        
-        $('.shortlist-btn-counter').text(count - 1);
-        $('.shortlist-counter').text(count - 1);
-        
-        if( $('.shortlist-btn-counter').text() == '0' ) {
-            $('.empty-shortlist').removeClass('inactive');
-        } else {
-            $('.empty-shortlist').addClass('inactive');
-        }
-        
-        var current_shortlist = $('.shortlist-links ul').html();
-        sessionStorage.setItem('shortlist', current_shortlist );
-        
-        var shortlist_count = $('.shortlist-counter').text();
-        sessionStorage.setItem('shortlist count', shortlist_count);
-        
-        $('.shortlist').each(function(){
-            var shortlist_id = $(this).parents('.search-result-card').attr('id');
-            
-            if ($(this).hasClass('shortlisted')) {
-                sessionStorage.setItem(shortlist_id, 'shortlisted');
-            } else {
-                sessionStorage.setItem(shortlist_id, '');
-            }
-        });
-        
-        var scroll_container = $('.shortlist-wrapper .scrollable');
-        if(scroll_container[0].scrollHeight === scroll_container.innerHeight()){
-           $('.shortlist-wrapper').addClass('no-overflow');
-        } else {
-            scroll_container.removeClass('no-overflow');
-        }
-    });
-    
-    // Shortlist modal
-    $(".view-shortlist").on("click", function(){
-        if( !($(this).hasClass('disabled')) ) {
-            $(".shortlist-wrapper").addClass("active");
-            $(".modal-background").addClass("active");
-            
-            var scroll_container = $('.shortlist-wrapper .scrollable');
-            if(scroll_container[0].scrollHeight === scroll_container.innerHeight()){
-               $('.shortlist-wrapper').addClass('no-overflow');
-            } else {
-                scroll_container.removeClass('no-overflow');
-            }
-        }
-    });
-    $(".shortlist-wrapper .modal-close").on("click", function(){
-        $(".shortlist-wrapper").removeClass("active");
-        $(".modal-background").removeClass("active");
-    });
-
-    $(".modal-background").on("click", function(){
-        $(".shortlist-wrapper").removeClass("active");
-        $(".modal-background").removeClass("active");
-    });
-    
-    // Shortlist INSTRUCTIONS modal - only appears once
-    $(document).on("click", '.shortlist', function(){
-        var parent_card = $(this).parents('.search-card-standard-content'),
-            grant = parent_card.find('.search-card-content-type').text();
-        
-        $('.shortlist-wrapper-2 h4 span').text(grant);
-        
-        
-        if (!sessionStorage.getItem('shortlist use')) {
-            $(".shortlist-wrapper-2").addClass("active");
-            $(".modal-background").addClass("active");
-            sessionStorage.setItem('shortlist use', '1');
-        }
-    });
-    $(".shortlist-wrapper-2 .modal-close").on("click", function(){
-        $(".shortlist-wrapper-2").removeClass("active");
-        $(".modal-background").removeClass("active");
-    });
-
-    
-    
-    // FINDER CHANGE SECTION
-    // Get current path, put in an array and split out to determine the section number
-    var pathArray = window.location.pathname.split('/');
-    var current_section = pathArray[3];   
-    current_section = current_section[5];
-
-    $('.finder_section').hide(); 
-    
-    switch (current_section) {
-        case "h":
-            $('#section_0').show();
-            break; 
-        case "1":
-            $('#section_1').show();
-            break;
-        case "2":
-            $('#section_2').show();
-            break;
-        case "3":
-            $('#section_3').show();
-            break;
-        case "4":
-            $('#section_4').show();
-            break;
-        case "5":
-            $('#section_5').show();
-            break;
-        case "6":
-            $('#section_6').show();
-            break;
-        case "7":
-            $('#section_7').show();
-            break;
-        case "8":
-            $('#section_8').show();
-            break;
-        default:
-            $('#section_loading').show();
-    }
 
 
     // FILTER ACCORDIONS
@@ -599,71 +255,7 @@ $(document).ready(function () {
         
     });
    
- 
     
-    // FINDER QUESTIONS
-    // Multiple selects
-    $('.finder-question.multi-select li').on('click', function(){
-        
-        var filter_option = $(this).attr('data-value');
-        var filter_type = $(this).attr('filter-type');
-        
-        if ($(this).hasClass('selected')) {
-            sessionStorage.setItem(filter_option, false);
-        } else {
-            sessionStorage.setItem(filter_option, true);
-        }
-        
-        $(this).toggleClass('selected');
-        $('.active-filters li[data-value="' + filter_option + '"]').toggleClass('selected');
-        $('#' + filter_option).parent('.checkbox-item').toggleClass('selected');
-        
- 
-    });
-    
-    // Single selects
-    $('.finder-question.single-select select').change(function(){
-        
-        var filter_option = $(this).val();
-        var filter_type = $(this).parents('.finder-question').attr('id');
-        filter_type = (filter_type.slice(9, filter_type.length));
-        
-        // Add bubble
-        $('#' + filter_type + ' .active-filters.single-select li').removeClass('selected');
-            $('.active-filters.single-select li[data-value="' + filter_option + '"]').addClass('selected');
-        
-        // Change select in the filters
-        $('#' + filter_type + ' .filter-item-content select').val(filter_option);
-        
-        // Add to sessionStorage 
-        sessionStorage.setItem(filter_type + " selection", filter_option);
-        
-        // Disable dynamic toggle question
-        if(filter_option !== "select-option") {
-            $('.dynamic-question').removeClass('disabled');
-            $('input[toggle-filter-type="' + toggle_option + '"]').removeAttr("disabled");
-            
-            $('.active-filters li[filter-type="' + toggle_option + '"]').removeClass('selected');
-            
-            $('input[toggle-filter-type="' + toggle_option + '"]').prop('checked', false).removeClass('selected').attr("disabled", false);
-            
-        } else {
-            $('.dynamic-question').addClass('disabled');
-            $('.active-filters li[filter-type="' + toggle_option + '"]').removeClass('selected');
-            $('input[toggle-filter-type="' + toggle_option + '"]').prop('checked', false).removeClass('selected').attr("disabled", true);
-             
-            if (toggle_option === 'industry-toggle') {
-                sessionStorage.setItem('industry-toggle', 0);
-            }
-        }
-        
-        if (toggle_option === 'industry-toggle') {
-            sessionStorage.setItem('industry-toggle', 0);
-        }   
-    });
-    
-    
-
     // FILTER SELECTONS
     // Select filter 'bubble' options - multiple select
     $('.active-filters.multi-select li').on('click', function(){
@@ -673,11 +265,9 @@ $(document).ready(function () {
     
         $(this).toggleClass('selected');
         $('#' + filter_option).parent('.checkbox-item').toggleClass('selected');
-        $('.finder-question.multi-select li[data-value="' + filter_option + '"]').toggleClass('selected'); 
         
         total_active_filters();
         
-
     });
     
     
@@ -746,8 +336,7 @@ $(document).ready(function () {
         
         $(this).parents('.checkbox-item').toggleClass('selected');
         $(this).parents('.filter-item').find('.active-filters li[data-value="' + filter_option +'"]').toggleClass('selected ');
-        $('.finder-question.multi-select li[data-value="' + filter_option + '"]').toggleClass('selected');
-        
+                
         if ($(this).parents('.checkbox-item').hasClass('selected')) {
             sessionStorage.setItem(filter_option, true);
         } else {
@@ -756,26 +345,19 @@ $(document).ready(function () {
                    
     }); 
     
-    // Toggle switch questions
-    $('.finder-question-toggle .custom-control-input').on('click', function(){
-        var filter_type = $(this).parents('.finder-question-toggle').attr('id');  
-        filter_type = filter_type.slice(9, filter_type.length);
-        //console.log(filter_type);
-
-            if ($(this).is(":checked")) { 
-                $('li[data-value="' + filter_type + '"]').toggleClass('selected');
-                $('#filter-' + filter_type).prop('checked', true).toggleClass('selected');
-                
-            } else {
-                $('li[data-value="' + filter_type + '"]').toggleClass('selected');
-                $('#filter-' + filter_type).prop('checked', false).toggleClass('selected');
-            }
+    // Select filter radio button options
+    $('.radio-button label').on('click', function(){
+        $('.radio-button label').each(function(){
+            $(this).removeClass('selected');
+        });
+        $(this).toggleClass('selected');
     });
     
+    // Toggle switch questions  
     $('.filter-item .custom-control-input').on('click', function(){
         var filter_type = $(this).attr('id');
         filter_type = filter_type.slice(7, filter_type.length);
-        //console.log(filter_type);
+        console.log(filter_type);
         
         if ($(this).is(":checked")) { 
             $(this).toggleClass('selected');
@@ -789,20 +371,10 @@ $(document).ready(function () {
         }
     });
    
-    $('.filter-item .filter-toggle-switch').on('click', function(){
-        var filter_type = $(this).attr('data-value');
-        //console.log(filter_type);
-        
-        $(this).removeClass('selected');
-        $('#'+ filter_type + '-switch').prop('checked', false).toggleClass('selected');
-        $('#filter-' + filter_type).prop('checked', false).toggleClass('selected');
-    });
-    
-    
- 
+
 
     // FUNCTION TO COUNT and SET active filter counts
-    var all_filter_types = ['location', 'rural', 'industry', 'industry-toggle', 'business-type', 'support-type', 'objectives', 'business-stage', 'status', 'atsi'];
+    var all_filter_types = ['date', 'topic', 'business-location', 'online', 'in-person', 'past-recorded-events'];
     
     
     // MOBILE FILTER VISIBILITY
@@ -833,29 +405,16 @@ $(document).ready(function () {
         $('.modal-background').removeClass('active');
     });
     
-    $('.name-search-btn').on('click', function(){   
-        $('.filter-wrapper').removeClass('active');
-        $('.modal-background').removeClass('active');
-    });
+    // RESULTS CARDS
+
     
-    // FINDER RESULTS CARDS
-    $(document).on('click', '.accordion-title', function(){
-        $(this).parents('.search-accordion-expand-wrapper').find(".collapse").slideToggle();
-        $(this).parents('.grant-expand-title').toggleClass('collapsed');
-    });
-   
+    
     
     // CLEAR ALL FILTERS / QUESTIONS
     var clear_filters = function(){
         $('.active-filters li.selected').removeClass('selected');
         $('.checkbox-item.selected').removeClass('selected');
-        $('.finder-question li.selected').removeClass('selected');
-        $('.finder-question-toggle .custom-control-input').prop('checked', false).removeClass('selected');
-        
-        
-        $('.finder-question.single-select select').val('select-option');
-        $('.filter-item-content select').val('select-option');
-        
+
         $('.filter-item-title').removeClass('open');
         $('.filter-item-content').slideUp();
         $('.filter-item .custom-control-input').prop('checked', false).removeClass('selected');
@@ -898,27 +457,27 @@ $(document).ready(function () {
 
         
     // SET ACTIVE FILTERS ON PAGE LOAD - MULTIPLE SELECT
-    var filter_set_multiple = ['australian-capital-territory', 'new-south-wales', 'northern-territory', 'queensland', 'south-australia', 'tasmania', 'victoria', 'western-australia','other-australian-territory', 'funding', 'subsidy', 'loan', 'sponsorship', 'tax-rebate', 'advice', 'tax-benefits', 'build-or-improve-infrastructure', 'covid-19-related-support', 'employ-people', 'funding-for-training-and-skills-development', 'import-or-export-products-or-services', 'improve-or-grow-my-business', 'invest-money-in-other-businesses', 'market-and-advertise-my-business', 'organise-an-event', 'prevent-or-recover-from-a-natural-disaster', 'purchase-or-upgrade-equipment-vehicles-or-tools', 'recycle-waste-or-reduce-my-energy-use', 'research-and-develop-innovative-new-products-or-services', 'start-a-business', 'upgrade-restore-or-fit-out-a-building', 'manufacturing', 'working-with-defence', 'culture-and-heritage', 'digital-and-online','open', 'coming-soon', 'closed'];
+    var filter_set_multiple = ['business-finance', 'business-planning', 'contracting-and-tendering', 'customer-service', 'digital-business', 'employing-people', 'exporting', 'government-grant-programs', 'industry-compliance', 'innovation-and-commercialisation', 'marketing', 'networking', 'starting-a-business', 'taxation-and-record-keeping', 'work-health-and-safety'];
     
     for ( var filter = 0; filter < filter_set_multiple.length; filter++) {
         
         var filter_option = filter_set_multiple[filter];
             
             if (sessionStorage.getItem(filter_option) === "true") {  
-
-                // Select filters on the page
-                $('.finder-question.multi-select li[data-value="' + filter_option + '"]').toggleClass('selected');       
+                // Select filters on the page       
                 $('.active-filters li[data-value="' + filter_option + '"]').toggleClass('selected');    
                 $('#' + filter_option).parent('.checkbox-item').toggleClass('selected');
-
             }
     }
+    
+    // RADIO BUTTONS ['past-dates', 'this-month', 'this-month-plus-1', 'this-month-plus-2', 'this-month-plus-3', 'custom-date-range']
+    
     
     
     
     // SET ACTIVE FILTERS ON PAGE LOAD - SINGLE SELECT   
     // function for reset each filter set
-    var set_single_filters = function(filter_type, filter_set){
+    /*var set_single_filters = function(filter_type, filter_set){
         
         var filter_option = sessionStorage.getItem(filter_type + ' selection');
         if (filter_option === null) {
@@ -944,11 +503,11 @@ $(document).ready(function () {
     set_single_filters('industry', filter_set_industry);
     set_single_filters('business-type', filter_set_business_type);
     set_single_filters('business-stage', filter_set_business_stage);
-    
+    */
     
     
     // SET TOGGLE SWITCH QUESTIONS ON PAGE LOAD.
-    var filter_set_toggles = ['rural', 'atsi', 'industry-toggle'];
+    var filter_set_toggles = ['online', 'in-person', 'past-recorded-events'];
     
     for ( var toggle = 0; toggle < filter_set_toggles.length ; toggle++){
         var toggle_option = filter_set_toggles[toggle];
@@ -962,14 +521,6 @@ $(document).ready(function () {
             $('#question-' + toggle_option).removeClass('disabled');
         } 
         
-        
-        
-        
-        // FIX TOGGLE DISABLED ON LOAD (SHOUDLN"T BE WHEN AN INDUSTRY IS SELECTED)
-        
-        
-        
-        
     }
     
  
@@ -982,11 +533,11 @@ $(document).ready(function () {
     var showing = sessionStorage.getItem('showing');
     
     if (showing === null) {
-        showing = 587;
+        showing = 131;
     }
     if(sessionStorage.getItem('name-filter') !== null) {
         sessionStorage.removeItem('name-filter');
-        showing = 587;
+        showing = 131;
     }
     $('span.number').text(showing);
     
@@ -1214,7 +765,7 @@ $(document).ready(function () {
     rearrange_cards();
     
     
-    // Persistent showing number and shortlist  
+    // PERSISTENT SHOWING NUMBER  
     if ($('.showing-results').length) {
         var showing_position = $('.results-title').offset();
         $(window).scroll(function () {
@@ -1230,53 +781,18 @@ $(document).ready(function () {
     
     
     
-    // NAME SEARCH
-    $(".name-search input").on("input", function() {
-        if($(this).val() !== "") {
-            $('.search-list-wrapper').slideDown();
-        } else {
-            $('.search-list-wrapper').slideUp();
-            $('.name-filter li').text($(this).val()).removeClass('selected');
-        }
-    });
-    
-    $(".name-search button").on('click', function(){
-        $('.search-list-wrapper').slideUp();
-        
-        if ($(".name-search input").val() !== "") {
-            $('.name-filter li').text($('.name-search input').val()).addClass('selected');
-            clear_filters();
-            sessionStorage.setItem('name-filter', $('.name-search input').val());
-            sessionStorage.setItem('showing', 11);
-            $('.showing-results span').text(11);
-        } else {
-            $('.name-filter li').text($('.name-search input').val()).removeClass('selected');
-            sessionStorage.removeItem('name-filter');
-            sessionStorage.setItem('showing', max_showing);
-            $('.showing-results span').text(max_showing);
-        }
-    });
-    
-    $('.searchbar-list li').on('click', function(){
-        $('.search-list-wrapper').slideUp();
-        $(".name-search input").val($(this).text());
-        clear_filters();
-        
-        $('.name-filter li').text($(this).text()).addClass('selected');
-        sessionStorage.setItem('name-filter', $(this).text());
-        sessionStorage.setItem('showing', 11);
-        $('.showing-results span').text(11);
-    });
-    
-    $('.name-filter li').on('click', function(){
-        $(this).text('').removeClass('selected');
-        $(".name-search input").val('');
-        clear_filters();
-        sessionStorage.removeItem('name-filter');
-        sessionStorage.setItem('showing', max_showing);
-        $('.showing-results span').text(max_showing);
-    });
-
+    // SET FILTER MONTHS
+    var date = new Date(),
+        current_month = date.getMonth(),
+        current_month_plus_1 =  date.getMonth() + 1,
+        current_month_plus_2 =  date.getMonth() + 2,
+        current_month_plus_3 =  date.getMonth() + 3,
+        month_set = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+ 
+    $('.current-month').text(month_set[current_month]);
+    $('.current-month-plus-1').text(month_set[current_month_plus_1]);
+    $('.current-month-plus-2').text(month_set[current_month_plus_2]);
+    $('.current-month-plus-3').text(month_set[current_month_plus_3]);
     
     
 }); // END doc ready
