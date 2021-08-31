@@ -707,7 +707,7 @@ $(document).ready(function () {
     // VARY SEARCH RESULT CARDS ON DISPLAY
     
     // Create variables for storing search card ids 
-    var card_ids_task_1 = ["#search-result-1", "#search-result-2", "#search-result-3", "#search-result-4", "#search-result-5", "#search-result-6", "#search-result-7", "#search-result-8", "#search-result-9", "#search-result-10"];
+    /*var card_ids_task_1 = ["#search-result-1", "#search-result-2", "#search-result-3", "#search-result-4", "#search-result-5", "#search-result-6", "#search-result-7", "#search-result-8", "#search-result-9", "#search-result-10"];
     var card_ids_task_2 = ["#search-result-11", "#search-result-12", "#search-result-13", "#search-result-14", "#search-result-15", "#search-result-16", "#search-result-17", "#search-result-18", "#search-result-19", "#search-result-20"];
     
     // Create sets of card HTML
@@ -763,6 +763,7 @@ $(document).ready(function () {
     
     // Rearrange cards on page load (so the task remains consistent across tool sections once it is selected).
     rearrange_cards();
+    */
     
     
     // PERSISTENT SHOWING NUMBER  
@@ -787,12 +788,16 @@ $(document).ready(function () {
         current_month_plus_1 =  date.getMonth() + 1,
         current_month_plus_2 =  date.getMonth() + 2,
         current_month_plus_3 =  date.getMonth() + 3,
-        month_set = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        month_set = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        current_year = date.getFullYear();
+    
+    console.log(current_year);
  
     $('.current-month').text(month_set[current_month]);
     $('.current-month-plus-1').text(month_set[current_month_plus_1]);
     $('.current-month-plus-2').text(month_set[current_month_plus_2]);
     $('.current-month-plus-3').text(month_set[current_month_plus_3]);
+    $('.current-year').text(current_year);
     
     
 }); // END doc ready
