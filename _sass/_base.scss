@@ -68,6 +68,10 @@ html {
 }
 
 /* BREADCRUMBS */
+.breadcrumbs-wrapper {
+    background-color: #fff;
+    padding: 16px 0 16px 15px;
+}
 .breadcrumbs-wrapper .breadcrumb-link {
     line-height: 1.4rem;
     display: inline-block;
@@ -672,6 +676,15 @@ html {
     }
 }
                 
-                
+
+// FOOTER 
+.footer ul li:before {
+    display: none !important;
+}
+.footer a {
+    text-decoration: none !important;
+    box-shadow: none !important;
+    border-bottom: none;
+}
 
    
