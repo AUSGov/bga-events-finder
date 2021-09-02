@@ -790,8 +790,6 @@ $(document).ready(function () {
         current_month_plus_3 =  date.getMonth() + 3,
         month_set = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         current_year = date.getFullYear();
-    
-    console.log(current_year);
  
     $('.current-month').text(month_set[current_month]);
     $('.current-month-plus-1').text(month_set[current_month_plus_1]);
@@ -799,6 +797,14 @@ $(document).ready(function () {
     $('.current-month-plus-3').text(month_set[current_month_plus_3]);
     $('.current-year').text(current_year);
     
+    
+    
+    // SESSIONS ACCORDIONS
+    $('#sessions.accordion .accordion-item button').on('click', function(){
+        console.log($(this));
+        $(this).parents('.accordion-item').toggleClass('open');
+        $(this).parents('.accordion-item').find('.accordion-body').slideToggle();
+    });
     
 }); // END doc ready
 
