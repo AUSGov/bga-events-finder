@@ -1,9 +1,35 @@
 <div class="filters">
-    <h3 class="mobile-show">Filter grants and programs</h3>            
+    <h3>Filter events and training</h3>            
     
+    
+   <!-- EVENT TYPE TOGGLES -->
+    <div class="filter-item" id="event-type">
+
+            <form>
+                <div class="checkbox-item">
+                <label>Online events</label>
+                    <input type="checkbox" id="online-events">
+                </div>
+          
+                <div class="checkbox-item">
+                <label>In person events</label>
+                    <input type="checkbox" id="in-person-events">
+                </div>
+          
+                <div class="checkbox-item">
+                <label>past recorded events</label>
+                    <input type="checkbox" id="past-recorded-events">
+                </div>
+           </form>
+      
+    </div>
+    
+    
+    
+      
     
     <!-- 1. DATE -->
-    <div class="filter-item" id="date">
+    <!--<div class="filter-item" id="date">
                     <div class="filter-item-title">
                          <p>Date <span class="mobile-counter"></span></p>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="12.5" viewBox="0 0 20 12.5">
@@ -39,11 +65,6 @@
                             </div>
                             
                             <div class="radio-button">
-                                <input type="radio" id="current-month-plus-3" name="radio-group" checked>
-                                <label for="past-recorded-events" class="form-field"><span class="current-month-plus-3"></span><div class="radio-circle"></div></label>
-                            </div>
-                            
-                            <div class="radio-button">
                                 <input type="radio" id="custom-date-range" name="radio-group" checked>
                                 <label for="custom-date-range" class="form-field">Custom date range<div class="radio-circle"></div></label>
                             </div>
@@ -51,7 +72,64 @@
                         </form>
                         
                         </div>
+                    </div>-->
+    
+     <div class="filter-item" id="date">
+                    <div class="filter-item-title">
+                         <p>Date <span class="mobile-counter"></span></p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="12.5" viewBox="0 0 20 12.5">
+                            <g transform="translate(20 12.5) rotate(180)">
+                                <path id="Chevron_Up" data-name="Chevron / Up" d="M10,4.965,2.478,12.5,0,10.018,10,0,20,10.018,17.522,12.5Z" fill="#333" />
+                            </g>
+                        </svg>
+
+                         </div>
+                    <div class="active-filters multi-select">
+                        <ul>
+                            <li filter-type="topic" filter-value="13" data-value="past-recorded-events">Past dates (recorded events)</li>
+                            <li filter-type="topic" filter-value="25" data-value="this-month">This month (<span class="current-month"></span>)</li>
+                            <li filter-type="topic" filter-value="25" data-value="this-month-plus-1"><span class="current-month-plus-1"></span></li>
+                            <li filter-type="topic" filter-value="13" data-value="this-month-plus-2"><span class="current-month-plus-2"></span></li>
+                            <li filter-type="topic" filter-value="13" data-value="custom-date-range">Custom date range</li>
+                            
+                        </ul>
+                    </div>                
+                    <div class="filter-item-content">
+
+                        <form>
+                            <div class="checkbox-item" filter-value="13" filter-type="topic">
+                            <input type="checkbox" id="past-recorded-events">
+                            <label>Past dates (recorded events)</label>
+                            </div>
+                            
+                            <div class="checkbox-item" filter-value="25" filter-type="topic">
+                            <input type="checkbox" id="this-month">
+                            <label>This month (<span class="current-month"></span>)</label>
+                            </div> 
+                            
+                            <div class="checkbox-item" filter-value="25" filter-type="topic">
+                            <input type="checkbox" id="this-month-plus-1">
+                            <label><span class="current-month-plus-1"></span></label>
+                            </div> 
+                            
+                            <div class="checkbox-item" filter-value="25" filter-type="topic">
+                            <input type="checkbox" id="this-month-plus-2">
+                            <label><span class="current-month-plus-2"></span></label>
+                            </div>
+                                                        
+                            <div class="checkbox-item" filter-value="13" filter-type="topic">
+                            <input type="checkbox" id="this-month-plus-3">
+                            <label><span class="current-month-plus-3"></span> and further</label>
+                            </div>  
+              
+                             
+                        </form>
+                        
+                        
+
+                        </div>
                     </div>
+    
     
     
     <!-- 2. TOPIC -->
@@ -193,41 +271,7 @@
                     </div>
               
     
-    <!-- 4. ONLINE TOGGLE -->
-    <div class="filter-item one-option" id="online">
-
-        <div class="custom-control custom-switch toggle-question filter-toggle-question">
-           
-             <label class="custom-control-label" for="filter-online">Online</label>
-             <input type="checkbox" class="custom-control-input selected" checked="checked" id="filter-online" toggle-filter-type="online" filter-value="73">
-        </div>
-
-    </div>
     
-    
-    <!-- 5. IN PERSON TOGGLE -->
-    <div class="filter-item one-option" id="in-person">
-
-        <div class="custom-control custom-switch toggle-question filter-toggle-question">
-          
-             <label class="custom-control-label" for="filter-in-person">In person</label>
-              <input type="checkbox" class="custom-control-input selected" checked="checked" id="filter-in-person" toggle-filter-type="in-person" filter-value="28">
-        </div>
-
-    </div>      
-    
-    
-    <!-- 6. PAST RECORDED EVENTS TOGGLE -->
-    <div class="filter-item one-option" id="past-recorded-events">
-
-        <div class="custom-control custom-switch toggle-question filter-toggle-question">
-           
-             <label class="custom-control-label" for="filter-past-recorded-events">Past recorded events</label>
-             <input type="checkbox" class="custom-control-input selected" checked="checked" id="filter-past-recorded-events" toggle-filter-type="past-recorded-events" filter-value="30">
-        </div>
-
-    </div>
-      
                  
     </div>
     

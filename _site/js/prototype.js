@@ -767,7 +767,7 @@ $(document).ready(function () {
     
     
     // PERSISTENT SHOWING NUMBER  
-    if ($('.showing-results').length) {
+    /*if ($('.showing-results').length) {
         var showing_position = $('.results-title').offset();
         $(window).scroll(function () {
             if ($(window).scrollTop() > showing_position.top) {
@@ -779,6 +779,7 @@ $(document).ready(function () {
             }
         });
     } 
+    */
     
     
     
@@ -805,6 +806,55 @@ $(document).ready(function () {
         $(this).parents('.accordion-item').toggleClass('open');
         $(this).parents('.accordion-item').find('.accordion-body').slideToggle();
     });
+    
+
+    
+    // DATEPICKER
+	/*$('#datepicker .input-group.date').datepicker({
+		format: "dd/mm/yyyy",
+		autoclose: true,
+		todayHighlight: true,
+		weekStart: 1,
+		container: '#datepicker-container',
+		orientation: "bottom left"
+	});*/
+	/*$('.close-button').unbind();
+
+	$('.close-button').click(function () {
+		var common_ancestor = $(this).closest('.design-system-card');
+
+		if ($('.datepicker').is(":visible")) {
+			$('.date').datepicker('hide');
+
+			common_ancestor.find('.state-selector label input').removeAttr('checked');
+			common_ancestor.find('.default-label input').attr('checked', 'checked');
+			$(this).closest(".example").attr('data-state', 'default-state');
+
+		} else {
+			$('.date').datepicker('show');
+
+			common_ancestor.find('.state-selector label input').removeAttr('checked');
+			common_ancestor.find('.focus-label input').attr('checked', 'checked');
+			$(this).closest(".example").attr('data-state', 'focus-state');
+
+		}
+	});*/
+    
+   // OR TRY THE DATE RANGE - https://apps.bangor.ac.uk/static/intranet_project/bootstrap-daterangepicker/
+    /*$('input[name="datefilter"]').daterangepicker({
+      autoUpdateInput: false,
+      locale: {
+          cancelLabel: 'Clear'
+      }
+  });*/
+
+  $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+      $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+  });
+
+  $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+      $(this).val('');
+  });
     
 }); // END doc ready
 
