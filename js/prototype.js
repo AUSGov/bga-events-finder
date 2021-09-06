@@ -345,6 +345,22 @@ $(document).ready(function () {
                    
     }); 
     
+    // Select filter text input options
+    $('.text-field-filter button').on('click', function(){
+        var postcode = $(this).parents('.filter-item-content').find('input').val();
+        var filter_option = $(this).parents('.filter-item').attr('id');
+        console.log(filter_option);
+        
+        $(this).parents('.text-field-filter').find('.active-filters li').text(postcode).addClass('selected');
+        
+        if ($(this).parents('.text-field-filter').find('.active-filters li').hasClass('selected')) {
+            sessionStorage.setItem(filter_option, true);
+        } else {
+            sessionStorage.setItem(filter_option, false);
+        }
+    });
+    
+    
     // Select filter radio button options
     $('.radio-button label').on('click', function(){
         $('.radio-button label').each(function(){
@@ -457,7 +473,7 @@ $(document).ready(function () {
 
         
     // SET ACTIVE FILTERS ON PAGE LOAD - MULTIPLE SELECT
-    var filter_set_multiple = ['business-finance', 'business-planning', 'contracting-and-tendering', 'customer-service', 'digital-business', 'employing-people', 'exporting', 'government-grant-programs', 'industry-compliance', 'innovation-and-commercialisation', 'marketing', 'networking', 'starting-a-business', 'taxation-and-record-keeping', 'work-health-and-safety'];
+    var filter_set_multiple = ['business-finance', 'business-planning', 'contracting-and-tendering', 'customer-service', 'digital-business', 'employing-people', 'exporting', 'government-grant-programs', 'industry-compliance', 'innovation-and-commercialisation', 'marketing', 'networking', 'starting-a-business', 'taxation-and-record-keeping', 'work-health-and-safety', 'online-events', 'in-person-events', 'past-recorded-events', 'past-dates', 'this-month', 'this-month-plus-1', 'this-month-plus-2', 'this-month-plus-3', 'postcode'];
     
     for ( var filter = 0; filter < filter_set_multiple.length; filter++) {
         

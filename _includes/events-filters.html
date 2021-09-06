@@ -1,5 +1,5 @@
 <div class="filters">
-    <h3>Filter events and training</h3>            
+    <!--<h3>Filter events</h3>-->         
     
     
    <!-- EVENT TYPE TOGGLES -->
@@ -86,38 +86,39 @@
                          </div>
                     <div class="active-filters multi-select">
                         <ul>
-                            <li filter-type="topic" filter-value="13" data-value="past-recorded-events">Past dates (recorded events)</li>
-                            <li filter-type="topic" filter-value="25" data-value="this-month">This month (<span class="current-month"></span>)</li>
-                            <li filter-type="topic" filter-value="25" data-value="this-month-plus-1"><span class="current-month-plus-1"></span></li>
-                            <li filter-type="topic" filter-value="13" data-value="this-month-plus-2"><span class="current-month-plus-2"></span></li>
-                            <li filter-type="topic" filter-value="13" data-value="custom-date-range">Custom date range</li>
+                            <li filter-type="date" filter-value="13" data-value="past-dates">Past dates (recorded events)</li>
+                            <li filter-type="date" filter-value="25" data-value="this-month">This month (<span class="current-month"></span>)</li>
+                            <li filter-type="date" filter-value="25" data-value="this-month-plus-1"><span class="current-month-plus-1"></span></li>
+                            <li filter-type="date" filter-value="13" data-value="this-month-plus-2"><span class="current-month-plus-2"></span></li>
+                            <li filter-type="date" filter-value="13" data-value="this-month-plus-3"><span class="current-month-plus-3"></span> and further</li>
+                            
                             
                         </ul>
                     </div>                
                     <div class="filter-item-content">
 
                         <form>
-                            <div class="checkbox-item" filter-value="13" filter-type="topic">
-                            <input type="checkbox" id="past-recorded-events">
+                            <div class="checkbox-item" filter-value="13" filter-type="date">
+                            <input type="checkbox" id="past-dates">
                             <label>Past dates (recorded events)</label>
                             </div>
                             
-                            <div class="checkbox-item" filter-value="25" filter-type="topic">
+                            <div class="checkbox-item" filter-value="25" filter-type="date">
                             <input type="checkbox" id="this-month">
                             <label>This month (<span class="current-month"></span>)</label>
                             </div> 
                             
-                            <div class="checkbox-item" filter-value="25" filter-type="topic">
+                            <div class="checkbox-item" filter-value="25" filter-type="date">
                             <input type="checkbox" id="this-month-plus-1">
                             <label><span class="current-month-plus-1"></span></label>
                             </div> 
                             
-                            <div class="checkbox-item" filter-value="25" filter-type="topic">
+                            <div class="checkbox-item" filter-value="25" filter-type="date">
                             <input type="checkbox" id="this-month-plus-2">
                             <label><span class="current-month-plus-2"></span></label>
                             </div>
                                                         
-                            <div class="checkbox-item" filter-value="13" filter-type="topic">
+                            <div class="checkbox-item" filter-value="13" filter-type="date">
                             <input type="checkbox" id="this-month-plus-3">
                             <label><span class="current-month-plus-3"></span> and further</label>
                             </div>  
@@ -162,6 +163,8 @@
                             <li filter-type="topic" filter-value="13" data-value="work-health-and-safety">Work health and safety</li>
                         </ul>
                     </div>                
+                    
+        
                     <div class="filter-item-content">
 
                         <form>
@@ -201,7 +204,7 @@
                             </div>
                             
                             <div class="checkbox-item" filter-value="13" filter-type="topic">
-                            <input type="checkbox" id="organise-an-event">
+                            <input type="checkbox" id="government-grant-programs">
                             <label>Government grant programs</label>
                             </div>
                             
@@ -248,29 +251,38 @@
             
     
     <!-- 3. BUSINESS LOCATION -->
-    <div class="filter-item" id="business-location">
-                    <div class="filter-item-title">
-                         <p>Business location <span class="mobile-counter"></span></p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="12.5" viewBox="0 0 20 12.5">
-                            <g transform="translate(20 12.5) rotate(180)">
-                                <path id="Chevron_Up" data-name="Chevron / Up" d="M10,4.965,2.478,12.5,0,10.018,10,0,20,10.018,17.522,12.5Z" fill="#333" />
-                            </g>
-                        </svg>
+    <div class="filter-item text-field-filter" id="postcode">
+                 
+        <div class="filter-item-title">
+            <p>Business location <span class="mobile-counter"></span></p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="12.5" viewBox="0 0 20 12.5">
+                <g transform="translate(20 12.5) rotate(180)">
+                    <path id="Chevron_Up" data-name="Chevron / Up" d="M10,4.965,2.478,12.5,0,10.018,10,0,20,10.018,17.522,12.5Z" fill="#333" />
+                </g>
+            </svg>
 
-                         </div>
-                            
-                    <div class="filter-item-content">
+        </div>
+        
+        <div class="active-filters single-select">
+            <ul>
+                <li filter-type="postcode" filter-value="13" data-value="postcode"></li>
+            </ul>
+        </div>                
+                    
 
-                        <form>
-                            <label>My business postcode is</label>
-                            <input type="text" />
-                            
-                        </form>
-                        
-                        </div>
-                    </div>
+        <div class="filter-item-content">
+
+            <label>Enter your business postcode</label>
+            <div class="text-field-item">
+                <input type="text" />
+                <button class="apply-postcode">Apply filter</button>
+            </div>
+
+
+
+        </div>
               
-    
+    </div>
     
                  
     </div>
