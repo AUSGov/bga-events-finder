@@ -1414,7 +1414,7 @@
                     font-size: 16px;
                     font-weight: 600;
                     text-align: left;
-                    padding: 16px 0;
+                    padding: 16px 32px 16px 0;
                     border: none;
                     
                     &:focus {
@@ -1434,6 +1434,10 @@
                 .accordion-header {
                     background: url(../assets/chevron-up-black.svg) no-repeat; 
                     background-position: right 16px center;
+                    
+                    button {
+                        padding: 16px 32px 16px 0;
+                    }
                 }   
             }
         }
@@ -1525,6 +1529,42 @@
         }
     } 
 
+    @media(max-width: 576px) {
+        .events-content {
+            padding: 24px;
+            
+            .event-details, ul {
+                
+                li {
+                    margin-left: 0;
+                    
+                    strong {
+                        text-indent: 0;
+                        display: block;
+                    }
+                }
+            }
+        }
+        
+        #sessions.accordion {
+            .accordion-item {
+                .accordion-header {
+                    padding: 0 8px !important;
+                    background-position: reight 8px center;
+                }
+            }
+        }
+        
+        .register-link {
+            select {
+                width: 100%;
+                margin-bottom: 16px;
+            }
+            .primary-button {
+                width: 100%;
+            }
+        }
+    }
 }
 
 #information-video  {
