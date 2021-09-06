@@ -349,15 +349,18 @@ $(document).ready(function () {
     $('.text-field-filter button').on('click', function(){
         var postcode = $(this).parents('.filter-item-content').find('input').val();
         var filter_option = $(this).parents('.filter-item').attr('id');
-        console.log(filter_option);
         
         $(this).parents('.text-field-filter').find('.active-filters li').text(postcode).addClass('selected');
+        sessionStorage.setItem(filter_option, true);
+        sessionStorage.setItem(filter_option + "_value", postcode);
+    });
+    $(".text-select li").on('click', function(){
+        var filter_option = $(this).parents('.filter-item').attr('id');
+        console.log(filter_option);
         
-        if ($(this).parents('.text-field-filter').find('.active-filters li').hasClass('selected')) {
-            sessionStorage.setItem(filter_option, true);
-        } else {
-            sessionStorage.setItem(filter_option, false);
-        }
+        sessionStorage.setItem(filter_option, "false");
+        $(this).removeClass('selected');
+        
     });
     
     
@@ -473,7 +476,11 @@ $(document).ready(function () {
 
         
     // SET ACTIVE FILTERS ON PAGE LOAD - MULTIPLE SELECT
+    $('#postcode .active-filters li').text(sessionStorage.getItem('postcode_value'));
+    
     var filter_set_multiple = ['business-finance', 'business-planning', 'contracting-and-tendering', 'customer-service', 'digital-business', 'employing-people', 'exporting', 'government-grant-programs', 'industry-compliance', 'innovation-and-commercialisation', 'marketing', 'networking', 'starting-a-business', 'taxation-and-record-keeping', 'work-health-and-safety', 'online-events', 'in-person-events', 'past-recorded-events', 'past-dates', 'this-month', 'this-month-plus-1', 'this-month-plus-2', 'this-month-plus-3', 'postcode'];
+    
+    
     
     for ( var filter = 0; filter < filter_set_multiple.length; filter++) {
         

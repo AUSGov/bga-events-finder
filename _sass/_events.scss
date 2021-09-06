@@ -402,7 +402,7 @@
                         }
                         &.selected {
                             label:after {
-                                background: $teal-dark url(../assets/Icon-tick-white.svg) no-repeat;
+                                background: $teal-dark url(../assets/icon-tick-white.svg) no-repeat;
                                 background-position: center center;
                                 border-color: $teal-dark;
                                 border-width: 3px;
@@ -427,6 +427,7 @@
                     }
                     button {
                         background: $tool-teal-mid;
+                        font-size: 14px;
                         color: $black-light;
                         border-radius: 6px;
                         border: solid 2px $teal-dark;

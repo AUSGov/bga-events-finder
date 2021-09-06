@@ -1,4 +1,4 @@
-# Grants and programs finder tool
+# Events finder prototype 1
 
-[Finder tool demo](https://ausgov.github.io/bga-grants-and-programs/finder/tool.html)
+[Finder tool demo](https://ausgov.github.io/bga-events-finder/events/events-finder.html)
     

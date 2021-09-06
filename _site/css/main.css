@@ -4325,7 +4325,7 @@ html { overflow: -moz-scrollbars-vertical; overflow-y: scroll; }
 
 #events-finder .results-section .filter-and-results-wrapper .filter-wrapper .filters #event-type.filter-item .checkbox-item input { opacity: 1; width: 0; height: 24px; display: block; position: absolute; }
 
-#events-finder .results-section .filter-and-results-wrapper .filter-wrapper .filters #event-type.filter-item .checkbox-item.selected label:after { background: #218080 url(../assets/Icon-tick-white.svg) no-repeat; background-position: center center; border-color: #218080; border-width: 3px; }
+#events-finder .results-section .filter-and-results-wrapper .filter-wrapper .filters #event-type.filter-item .checkbox-item.selected label:after { background: #218080 url(../assets/icon-tick-white.svg) no-repeat; background-position: center center; border-color: #218080; border-width: 3px; }
 
 #events-finder .results-section .filter-and-results-wrapper .filter-wrapper .filters .filter-item.text-field-filter .text-field-item { display: flex; }
 
@@ -4333,7 +4333,7 @@ html { overflow: -moz-scrollbars-vertical; overflow-y: scroll; }
 
 #events-finder .results-section .filter-and-results-wrapper .filter-wrapper .filters .filter-item.text-field-filter label { font-family: "Open Sans", sans-serif; font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.5; }
 
-#events-finder .results-section .filter-and-results-wrapper .filter-wrapper .filters .filter-item.text-field-filter button { background: #CFEBEB; color: #333333; border-radius: 6px; border: solid 2px #218080; width: 50%; height: 44px; font-weight: 600; }
+#events-finder .results-section .filter-and-results-wrapper .filter-wrapper .filters .filter-item.text-field-filter button { background: #CFEBEB; font-size: 14px; color: #333333; border-radius: 6px; border: solid 2px #218080; width: 50%; height: 44px; font-weight: 600; }
 
 #events-finder .results-section .filter-and-results-wrapper .filter-wrapper .filters .filter-item.text-field-filter button:focus { outline: none; background: #105C5C; border-color: #105C5C; color: #ffffff; }
 
