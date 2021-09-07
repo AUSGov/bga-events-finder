@@ -4339,6 +4339,8 @@ html { overflow: -moz-scrollbars-vertical; overflow-y: scroll; }
 
 #events-finder .results-section .filter-and-results-wrapper .filter-wrapper .filters .filter-item.text-field-filter button:hover { background-color: #218080; color: #ffffff; border-color: #105C5C; }
 
+@media (max-width: 992px) { #events-finder .results-section .filter-and-results-wrapper .filter-wrapper .filters .filter-item.text-field-filter .text-field-item { display: block; } #events-finder .results-section .filter-and-results-wrapper .filter-wrapper .filters .filter-item.text-field-filter input { width: 100%; margin-bottom: 8px; } #events-finder .results-section .filter-and-results-wrapper .filter-wrapper .filters .filter-item.text-field-filter button { width: 100%; } }
+
 @media (max-width: 768px) { #events-finder .results-section .filter-and-results-wrapper .filter-wrapper .filters .filter-item.text-field-filter button { background: #ffffff; } }
 
 #events-finder .results-section .filter-and-results-wrapper .clear-filters { margin-bottom: 32px; }

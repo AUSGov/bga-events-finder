@@ -453,6 +453,24 @@
             
            
         }
+        @media(max-width: 992px) {
+           .filters {
+                .filter-item {
+                    &.text-field-filter {
+                        .text-field-item {
+                            display: block;
+                        }
+                        input {
+                            width: 100%;
+                            margin-bottom: 8px;
+                        }
+                        button {
+                            width: 100%;
+                        }
+                    }
+                }
+            } 
+        }
         @media(max-width: 768px) {
             .filters {
                 .filter-item {
