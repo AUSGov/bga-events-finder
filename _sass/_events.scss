@@ -451,190 +451,18 @@
                 }
             }
             
-            /*#datepicker {
-				.input-group {
-					position: relative;
-					display: block;
-					width: 340px;
-					height: 52px;
-					z-index: 2000;
-
-					input {
-						border-radius: 0;
-						width: 288px;
-						display: inline-block;
-						height: 52px;
-						top: 0;
-						left: 0;
-						box-shadow: none;
-						background: $white;
-					}
-
-					.input-group-addon {
-						height: 52px;
-						width: 52px;
-						border: solid 1px $darkblue-mid;
-						border-left: none;
-						display: inline-block;
-						position: absolute;
-						top: 0;
-						right: 0;
-						background: $white url(../assets/BGAIcon-calendar-blue-mid.svg) no-repeat center center;
-
-						&:hover {
-							background: url(../assets/BGAIcon-calendar-blue.svg) no-repeat center center;
-							border: solid 3px $blue-primary;
-						}
-					}
-				}
-
-				@media (max-width: 650px) {
-					.input-group {
-						width: 250px;
-
-						input {
-							width: 200px;
-						}
-					}
-				}
-			}
-			.datepicker {
-				width: 340px !important;
-				padding: 16px;
-				border: 3px solid $blue-primary;
-				border-top: none;
-				border-radius: 0;
-				box-shadow: none;
-				width: auto;
-				display: block;
-				left: 40px;
-				top: 134px;
-				z-index: 1999;
-				margin-top: 0;
-
-				&:before {
-					display: none;
-				}
-
-				.table-condensed {
-					font-size: 15px;
-					padding: 16px;
-					width: 100%;
-
-					td,
-					th {
-						border-radius: 0;
-					}
-
-					.datepicker-switch {
-						padding: 8px;
-						height: 44px;
-						font-size: 16px;
-						text-align: center;
-						@include font-format($font-family, $font-semibold, normal);
-						color: $blue-primary;
-						cursor: pointer;
-
-						&:hover {
-							background: $grey-lighter;
-						}
-					}
-
-					.prev {
-						text-indent: -9999px;
-						background: url(../assets/BGAIcon-chevron-left-blue.svg) no-repeat;
-						background-position: center center;
-						background-size: 10px 16px;
-						cursor: pointer;
-
-						&:hover {
-							background-color: $grey-lighter;
-						}
-					}
-
-					.next {
-						text-indent: -9999px;
-						background: url(../assets/BGAIcon-chevron-right-blue.svg) no-repeat;
-						background-position: center center;
-						background-size: 10px 16px;
-
-						&:hover {
-							background-color: $grey-lighter;
-						}
-					}
-
-					.dow {
-						color: $blue-primary;
-						@include font-format($font-family, $font-semibold, normal);
-					}
-
-					.day {
-						padding: 8px;
-						height: 44px;
-						width: 44px;
-						text-align: center;
-
-						&.active {
-							background: $blue-primary-mid;
-							color: $white;
-							@include font-format($font-family, $font-semibold, normal);
-						}
-
-						&.today {
-							background: $grey-lighter;
-							opacity: 1;
-						}
-
-						&.old,
-						&.new {
-							color: $grey;
-						}
-
-						&:hover {
-							background: $blue-primary;
-							color: $white;
-							@include font-format($font-family, $font-semibold, normal);
-						}
-					}
-
-					span {
-						border-radius: 0;
-						margin: 0;
-						padding: 8px 0;
-						line-height: 34px;
-						width: 25%;
-
-						&.focused,
-						&.active {
-							background: $blue-primary-mid;
-							color: $white;
-							@include font-format($font-family, $font-semibold, normal);
-						}
-
-						&:hover {
-							background: $blue-primary;
-							color: $white;
-							@include font-format($font-family, $font-semibold, normal);
-						}
-					}
-				}
-
-				@media (max-width: 650px) {
-					width: 250px !important;
-					padding: 8px;
-
-					.table-condensed {
-						.day {
-							padding: 6px;
-							height: 36px;
-							width: 36px;
-						}
-					}
-				}
-			}
-            */
-
            
+        }
+        @media(max-width: 768px) {
+            .filters {
+                .filter-item {
+                    &.text-field-filter {
+                        button {
+                            background: $white;
+                        }
+                    }
+                }
+            }
         }
   
     }
@@ -815,6 +643,20 @@
         }
         
         
+        @media(max-width: 992px) {
+            .search-card-content {
+                .search-card-footer {
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column-reverse;
+                    
+                    .location {
+                        display: inline-flex;
+                        margin-top: 16px;
+                    }
+                }
+            }
+        }
         @media(max-width: 767px) {
             .search-card-content .top-row {
                 .search-card-content-type {
@@ -823,6 +665,19 @@
                     position: relative;
                 }
                 
+            }
+        }
+        @media(max-width: 576px) {
+            .search-card-header {
+                display: block;
+                
+                .date {
+                    margin-bottom: 16px;
+                }
+                .cost {
+                    display: inline-flex;
+
+                }
             }
         }
     }
@@ -931,7 +786,7 @@
                 }
 
                 .view-filters.mobile-show {
-                    width: 50%;
+                    width: 100%;
                     display: inline-block;
 
                     a {
