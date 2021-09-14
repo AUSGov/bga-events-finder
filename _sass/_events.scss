@@ -74,26 +74,7 @@
             }
    
         }   
-
-        &.sticky {
-            position: fixed;
-            width: 100%;
-            background: $white;
-            background: #E1F2F2;
-            top: 0px;
-            left: 0;
-            padding: 0;
-            z-index: 5000;
-            box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 6px 0px;
-            transition: all 0.5s ease;
-            
-            .results-title  {
-                .showing-results {
-                    margin-bottom: 8px;
-                }
-            }
-        }
-        
+  
     }
     .filter-and-results-wrapper {
         &.sticky {
@@ -529,11 +510,82 @@
             margin-bottom: 32px;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 6px 0px;
             box-sizing: border-box;
-            display: block;
             transition-delay: 0s;
             transition-duration: 0.2s;
             transition-property: transform;
             transition-timing-function: ease-in;
+            display: block;
+            
+            &.hidden {
+                display: none !important;
+            }
+            
+            &.event-type-show {
+                display: block;
+                
+                &.date-hide {
+                    display: none;
+                }
+                &.topic-hide {
+                    display: none;
+                }
+                &.postcode-hide {
+                    display: none;
+                }
+            }
+            &.event-type-hide {
+                display: none;
+            }
+            &.date-show {
+                display: block;
+                
+                &.event-type-hide {
+                    display: none;
+                }
+                &.topic-hide {
+                    display: none;
+                }
+                &.postcode-hide {
+                    display: none;
+                }
+            }
+            &.date-hide {
+                display: none;
+            }
+            &.topic-show {
+                display: block;
+                
+                &.date-hide {
+                    display: none;
+                }
+                &.event-type-hide {
+                    display: none;
+                }
+                &.postcode-hide {
+                    display: none;
+                }
+                
+            }
+            &.topic-hide {
+                display: hide;
+            }
+            &.postcode-show {
+                display: block;
+                
+                &.date-hide {
+                    display: none;
+                }
+                &.event-type-hide {
+                    display: none;
+                }
+                &.topic-hide {
+                    display: none;
+                }
+            }
+            &.postcode-hide {
+                display: none;
+            }
+            
         }
         .search-card-header {
             background: $blue-primary-mid;
