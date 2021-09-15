@@ -4385,7 +4385,7 @@ html { overflow: -moz-scrollbars-vertical; overflow-y: scroll; }
 
 #events-finder .results-section .filter-and-results-wrapper .results-wrapper .search-card-result.topic-show.postcode-hide { display: none; }
 
-#events-finder .results-section .filter-and-results-wrapper .results-wrapper .search-card-result.topic-hide { display: hide; }
+#events-finder .results-section .filter-and-results-wrapper .results-wrapper .search-card-result.topic-hide { display: non    e; }
 
 #events-finder .results-section .filter-and-results-wrapper .results-wrapper .search-card-result.postcode-show { display: block; }
 
