@@ -712,6 +712,22 @@
             }
         }
         
+        .no-results {
+            
+            display: none;
+            
+            &.show {
+                display: block;
+            }
+            h3 {
+                padding-top: 0;
+            }
+            a {
+                color: $blue-primary-mid;
+                text-decoration: underline;
+                font-weight: 600;
+            }
+        }
         
         @media(max-width: 992px) {
             .search-card-content {

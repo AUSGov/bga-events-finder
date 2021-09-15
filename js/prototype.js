@@ -482,6 +482,7 @@ $(document).ready(function () {
             $('.page-number-wrapper').css('display', 'none');
             
             $('span.number').text(count);
+            
         } else {
             $('.pagination-wrapper').css('display', 'block');
             $('.page-number-wrapper').css('display', 'block');
@@ -489,6 +490,12 @@ $(document).ready(function () {
            
             var new_showing = Math.floor(Math.random() * 21) + 50;
             $('span.number').text(new_showing);
+        }
+        
+        if (count === 0) {
+            $('.no-results').addClass('show');
+        } else {
+            $('.no-results').removeClass('show');
         }
         
     };

@@ -4437,6 +4437,14 @@ html { overflow: -moz-scrollbars-vertical; overflow-y: scroll; }
 
 #events-finder .results-section .filter-and-results-wrapper .results-wrapper .search-card-content .search-card-footer .time p { font-size: 14px; margin: 3px 0 0 0; padding: 0; }
 
+#events-finder .results-section .filter-and-results-wrapper .results-wrapper .no-results { display: none; }
+
+#events-finder .results-section .filter-and-results-wrapper .results-wrapper .no-results.show { display: block; }
+
+#events-finder .results-section .filter-and-results-wrapper .results-wrapper .no-results h3 { padding-top: 0; }
+
+#events-finder .results-section .filter-and-results-wrapper .results-wrapper .no-results a { color: #4569A0; text-decoration: underline; font-weight: 600; }
+
 @media (max-width: 992px) { #events-finder .results-section .filter-and-results-wrapper .results-wrapper .search-card-content .search-card-footer { display: flex; align-items: flex-start; flex-direction: column-reverse; } #events-finder .results-section .filter-and-results-wrapper .results-wrapper .search-card-content .search-card-footer .location { display: inline-flex; margin-top: 16px; } }
 
 @media (max-width: 767px) { #events-finder .results-section .filter-and-results-wrapper .results-wrapper .search-card-content .top-row .search-card-content-type { margin-top: 32px; width: 100%; position: relative; } }
