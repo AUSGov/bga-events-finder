@@ -1428,6 +1428,10 @@
             font-family: "Open Sans", sans-serif;
             text-decoration: none;
             width: 190px;
+            
+            &:after {
+                display: none !important;
+            }
         }
         .primary-button:hover,
         .primary-button:focus {
