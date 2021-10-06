@@ -80,7 +80,8 @@
                         
 
                         </div>
-                    </div>
+                    
+    </div>
     
     
     
@@ -202,7 +203,7 @@
             
     
     <!-- 3. BUSINESS LOCATION -->
-    <div class="filter-item text-field-filter" id="postcode">
+    <div class="filter-item" id="location">
                  
         <div class="filter-item-title">
             <p>Business location <span class="mobile-counter"></span></p>
@@ -214,24 +215,78 @@
 
         </div>
         
-        <div class="active-filters text-select">
-            <ul>
-                <li filter-type="postcode" data-option="postcode_status" data-label="postcode"></li>
-            </ul>
-        </div>                
-                    
-
+        <div class="active-filters multi-select">
+                        <ul>
+                            
+                            <li filter-type="location" data-option="australian-capital-territory" data-label="australian-capital-territory">Australian Capital Territory</li>
+                            <li filter-type="location" data-option="new-south-wales" data-label="new-south-wales">New South Wales</li>
+                            <li filter-type="location" data-option="northern-territory" data-label="northern-territory">Northern Territory</li>
+                            <li filter-type="location" data-option="queensland" data-label="queensland">Queensland</li>
+                            <li filter-type="location" data-option="south-australia" data-label="south-australia">South Australia</li>
+                            <li filter-type="location" data-option="tasmania" data-label="tasmania">Tasmania</li>
+                            <li filter-type="location" data-option="victoria" data-label="victoria">Victoria</li>
+                            <li filter-type="location" data-option="western-australia" data-label="western-australia">Western Australia</li>
+                            <li filter-type="location" data-option="other-australian-territory" data-label="other-australian-territory">Other Australian territory</li>
+                            
+                        </ul>
+                    </div>                
         <div class="filter-item-content">
 
-            <label data-option="postcode_status" data-label="postcode">Enter your business postcode</label>
-            <div class="text-field-item">
-                <input type="text" />
-                <button class="apply-postcode"  filter-type="postcode">Add postcode </button>
-            </div>
+                        <form>
+                            
+                            <div class="checkbox-item" filter-type="location" data-option="australian-capital-territory" data-label="not-victoria">
+                            <input type="checkbox">
+                            <label data-option="australian-capital-territory" data-label="not-victoria">Australian Capital Territory</label>
+                            </div>
+                            
+                            <div class="checkbox-item" filter-type="location" data-option="new-south-wales" data-label="not-victoria">
+                            <input type="checkbox">
+                            <label data-option="new-south-wales" data-label="not-victoria">New South Wales</label>
+                            </div>  
+                            
+                            <div class="checkbox-item" filter-type="location" data-option="northern-territory" data-label="not-victoria">
+                            <input type="checkbox">
+                            <label data-option="northern-territory" data-label="not-victoria">Northern Territory</label>
+                            </div>
+                            
+                            <div class="checkbox-item" filter-type="location" data-option="queensland" data-label="not-victoria">
+                            <input type="checkbox">
+                            <label  data-option="queensland" data-label="not-victoria">Queensland</label>
+                            </div>
+                            
+                            <div class="checkbox-item" filter-type="location" data-option="south-australia" data-label="not-victoria">
+                            <input type="checkbox">
+                            <label data-option="south-australia" data-label="not-victoria">South Australia</label>
+                            </div>
+                            
+                            <div class="checkbox-item" filter-type="location" data-option="tasmania" data-label="not-victoria">
+                            <input type="checkbox">
+                            <label  data-option="tasmania" data-label="not-victoria">Tasmania</label>
+                            </div>
+                            
+                            <div class="checkbox-item" filter-type="location" data-option="victoria" data-label="victoria">
+                            <input type="checkbox">
+                            <label data-option="victoria" data-label="victoria">Victoria</label>
+                            </div>
+                            
+                            <div class="checkbox-item" filter-type="location" data-option="western-australia" data-label="not-victoria">
+                            <input type="checkbox">
+                            <label data-option="western-australia" data-label="not-victoria">Western Australia</label>
+                            </div>
+                            
+                            <div class="checkbox-item" filter-type="location" data-option="other-australian-territory" data-label="not-victoria">
+                            <input type="checkbox">
+                            <label data-option="other-australian-territory" data-label="not-victoria">Other Australian territory</label>
+                            </div>
+                             
+                        </form>
+                        
+                        
 
-
-
-        </div>
+                        </div>
+                   
+        
+        
               
     </div>
     

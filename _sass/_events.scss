@@ -529,7 +529,7 @@
                 &.topic-hide {
                     display: none;
                 }
-                &.postcode-hide {
+                &.location-hide {
                     display: none;
                 }
             }
@@ -545,7 +545,7 @@
                 &.topic-hide {
                     display: none;
                 }
-                &.postcode-hide {
+                &.location-hide {
                     display: none;
                 }
             }
@@ -561,7 +561,7 @@
                 &.event-type-hide {
                     display: none;
                 }
-                &.postcode-hide {
+                &.location-hide {
                     display: none;
                 }
                 
@@ -569,7 +569,7 @@
             &.topic-hide {
                 display: non    e;
             }
-            &.postcode-show {
+            &.location-show {
                 display: block;
                 
                 &.date-hide {
@@ -582,7 +582,7 @@
                     display: none;
                 }
             }
-            &.postcode-hide {
+            &.location-hide {
                 display: none;
             }
             

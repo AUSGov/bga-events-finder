@@ -813,7 +813,8 @@
                         
 
                         </div>
-                    </div>
+                    
+    </div>
     
     
     
@@ -935,7 +936,7 @@
             
     
     <!-- 3. BUSINESS LOCATION -->
-    <div class="filter-item text-field-filter" id="postcode">
+    <div class="filter-item" id="location">
                  
         <div class="filter-item-title">
             <p>Business location <span class="mobile-counter"></span></p>
@@ -947,24 +948,78 @@
 
         </div>
         
-        <div class="active-filters text-select">
-            <ul>
-                <li filter-type="postcode" data-option="postcode_status" data-label="postcode"></li>
-            </ul>
-        </div>                
-                    
-
+        <div class="active-filters multi-select">
+                        <ul>
+                            
+                            <li filter-type="location" data-option="australian-capital-territory" data-label="australian-capital-territory">Australian Capital Territory</li>
+                            <li filter-type="location" data-option="new-south-wales" data-label="new-south-wales">New South Wales</li>
+                            <li filter-type="location" data-option="northern-territory" data-label="northern-territory">Northern Territory</li>
+                            <li filter-type="location" data-option="queensland" data-label="queensland">Queensland</li>
+                            <li filter-type="location" data-option="south-australia" data-label="south-australia">South Australia</li>
+                            <li filter-type="location" data-option="tasmania" data-label="tasmania">Tasmania</li>
+                            <li filter-type="location" data-option="victoria" data-label="victoria">Victoria</li>
+                            <li filter-type="location" data-option="western-australia" data-label="western-australia">Western Australia</li>
+                            <li filter-type="location" data-option="other-australian-territory" data-label="other-australian-territory">Other Australian territory</li>
+                            
+                        </ul>
+                    </div>                
         <div class="filter-item-content">
 
-            <label data-option="postcode_status" data-label="postcode">Enter your business postcode</label>
-            <div class="text-field-item">
-                <input type="text" />
-                <button class="apply-postcode"  filter-type="postcode">Add postcode </button>
-            </div>
+                        <form>
+                            
+                            <div class="checkbox-item" filter-type="location" data-option="australian-capital-territory" data-label="not-victoria">
+                            <input type="checkbox">
+                            <label data-option="australian-capital-territory" data-label="not-victoria">Australian Capital Territory</label>
+                            </div>
+                            
+                            <div class="checkbox-item" filter-type="location" data-option="new-south-wales" data-label="not-victoria">
+                            <input type="checkbox">
+                            <label data-option="new-south-wales" data-label="not-victoria">New South Wales</label>
+                            </div>  
+                            
+                            <div class="checkbox-item" filter-type="location" data-option="northern-territory" data-label="not-victoria">
+                            <input type="checkbox">
+                            <label data-option="northern-territory" data-label="not-victoria">Northern Territory</label>
+                            </div>
+                            
+                            <div class="checkbox-item" filter-type="location" data-option="queensland" data-label="not-victoria">
+                            <input type="checkbox">
+                            <label  data-option="queensland" data-label="not-victoria">Queensland</label>
+                            </div>
+                            
+                            <div class="checkbox-item" filter-type="location" data-option="south-australia" data-label="not-victoria">
+                            <input type="checkbox">
+                            <label data-option="south-australia" data-label="not-victoria">South Australia</label>
+                            </div>
+                            
+                            <div class="checkbox-item" filter-type="location" data-option="tasmania" data-label="not-victoria">
+                            <input type="checkbox">
+                            <label  data-option="tasmania" data-label="not-victoria">Tasmania</label>
+                            </div>
+                            
+                            <div class="checkbox-item" filter-type="location" data-option="victoria" data-label="victoria">
+                            <input type="checkbox">
+                            <label data-option="victoria" data-label="victoria">Victoria</label>
+                            </div>
+                            
+                            <div class="checkbox-item" filter-type="location" data-option="western-australia" data-label="not-victoria">
+                            <input type="checkbox">
+                            <label data-option="western-australia" data-label="not-victoria">Western Australia</label>
+                            </div>
+                            
+                            <div class="checkbox-item" filter-type="location" data-option="other-australian-territory" data-label="not-victoria">
+                            <input type="checkbox">
+                            <label data-option="other-australian-territory" data-label="not-victoria">Other Australian territory</label>
+                            </div>
+                             
+                        </form>
+                        
+                        
 
-
-
-        </div>
+                        </div>
+                   
+        
+        
               
     </div>
     
@@ -1003,7 +1058,7 @@
 
     
     <!-- This month -->
-    <div class="search-card-result in-person-events this-month topic1" id="search-result-1">
+    <div class="search-card-result in-person-events this-month topic1 victoria" id="search-result-1">
 
         <div class="search-card-header">
             <div class="date">
@@ -1056,7 +1111,7 @@
         
     </div>
     
-     <div class="search-card-result in-person-events this-month postcode topic1" id="search-result-5">
+     <div class="search-card-result in-person-events this-month topic1 victoria" id="search-result-5">
 
         <div class="search-card-header">
             <div class="date">
@@ -1110,7 +1165,7 @@
     </div>
    
     
-    <div class="search-card-result online-events this-month topic2" id="search-result-2">
+    <div class="search-card-result online-events this-month topic2 victoria" id="search-result-2">
 
         <div class="search-card-header">
             <div class="date">
@@ -1164,7 +1219,7 @@
         
         </div>
     
-    <div class="search-card-result online-events this-month topic2 postcode NEW" id="search-result-D">
+    <div class="search-card-result online-events this-month topic2 victoria" id="search-result-D">
 
         <div class="search-card-header">
             <div class="date">
@@ -1218,7 +1273,7 @@
         
         </div>
    
-     <div class="search-card-result online-events this-month topic2 postcode NEW" id="search-result-A">
+     <div class="search-card-result online-events this-month topic2 " id="search-result-A">
 
         <div class="search-card-header">
             <div class="date">
@@ -1273,7 +1328,7 @@
         </div>
    
     
-    <div class="search-card-result search-card-result online-events this-month topic1 postcode" id="search-result-3">
+    <div class="search-card-result search-card-result online-events this-month topic1 not-victoria" id="search-result-3">
 
         <div class="search-card-header">
             <div class="date">
@@ -1327,7 +1382,7 @@
         
         </div>
 
-    <div class="search-card-result in-person-events this-month topic2 postcode" id="search-result-4">
+    <div class="search-card-result in-person-events this-month topic2 not-victoria" id="search-result-4">
 
         <div class="search-card-header">
             <div class="date">
@@ -1385,7 +1440,7 @@
     
     <!-- This month plus 1 -->
      
-     <div class="search-card-result in-person-events this-month-plus-1 topic2 postcode" id="search-result-6">
+     <div class="search-card-result in-person-events this-month-plus-1 topic2 not-victoria" id="search-result-6">
 
         <div class="search-card-header">
             <div class="date">
@@ -1441,7 +1496,7 @@
         </div>
 
     
-    <div class="search-card-result online-events this-month-plus-1 topic2 postcode" id="search-result-J">
+    <div class="search-card-result online-events this-month-plus-1 topic2 victoria" id="search-result-J">
 
         <div class="search-card-header">
             <div class="date">
@@ -1495,7 +1550,7 @@
         
         </div>
     
-    <div class="search-card-result online-events this-month-plus-1 topic2 postcode" id="search-result-F">
+    <div class="search-card-result online-events this-month-plus-1 topic2 victoria" id="search-result-F">
 
         <div class="search-card-header">
             <div class="date">
@@ -1550,7 +1605,7 @@
         </div>
     
     
-    <div class="search-card-result in-person-events this-month-plus-1 topic1 postcode" id="search-result-13">
+    <div class="search-card-result in-person-events this-month-plus-1 topic1 victoria" id="search-result-13">
 
         <div class="search-card-header">
             <div class="date">
@@ -1604,7 +1659,7 @@
     </div>
    
     
-    <div class="search-card-result in-person-events this-month-plus-1 topic2 postcode" id="search-result-14">
+    <div class="search-card-result in-person-events this-month-plus-1 topic2 not-victoria" id="search-result-14">
 
         <div class="search-card-header">
             <div class="date">
@@ -1659,7 +1714,7 @@
         </div>
 
     
-     <div class="search-card-result online-events this-month-plus-1 topic1 postcode" id="search-result-9">
+     <div class="search-card-result online-events this-month-plus-1 topic1 victoria" id="search-result-9">
 
         <div class="search-card-header">
             <div class="date">
@@ -1714,7 +1769,7 @@
         </div>
   
     
-    <div class="search-card-result online-events this-month-plus-1 topic2 postcode" id="search-result-E">
+    <div class="search-card-result online-events this-month-plus-1 topic2 victoria" id="search-result-E">
 
         <div class="search-card-header">
             <div class="date">
@@ -1768,7 +1823,7 @@
         
         </div>
     
-    <div class="search-card-result online-events this-month-plus-1 topic2 postcode" id="search-result-G">
+    <div class="search-card-result online-events this-month-plus-1 topic2 victoria" id="search-result-G">
 
         <div class="search-card-header">
             <div class="date">
@@ -1822,7 +1877,7 @@
         
         </div>
     
-    <div class="search-card-result online-events this-month-plus-1 topic2 postcode" id="search-result-I">
+    <div class="search-card-result online-events this-month-plus-1 topic2 not-victoria" id="search-result-I">
 
         <div class="search-card-header">
             <div class="date">
@@ -1877,7 +1932,7 @@
         </div>
     
     
-    <div class="search-card-result in-person-events this-month-plus-1 topic2 postcode" id="search-result-24">
+    <div class="search-card-result in-person-events this-month-plus-1 topic2 not-victoria" id="search-result-24">
 
         <div class="search-card-header">
             <div class="date">
@@ -1935,7 +1990,7 @@
     
     <!-- This month plus 2 -->
     
-    <div class="search-card-result in-person-events this-month-plus-2 topic2 postcode" id="search-result-6">
+    <div class="search-card-result in-person-events this-month-plus-2 topic2 not-victoria" id="search-result-6">
 
         <div class="search-card-header">
             <div class="date">
@@ -1990,7 +2045,7 @@
         
         </div>
    
-     <div class="search-card-result in-person-events this-month-plus-2 topic1 postcode" id="search-result-7">
+     <div class="search-card-result in-person-events this-month-plus-2 topic1 victoria" id="search-result-7">
 
         <div class="search-card-header">
             <div class="date">
@@ -2047,7 +2102,7 @@
         </div>
 
     
-    <div class="search-card-result online-events this-month-plus-2 topic1 postcode" id="search-result-19">
+    <div class="search-card-result online-events this-month-plus-2 topic1 victoria" id="search-result-19">
 
         <div class="search-card-header">
             <div class="date">
@@ -2102,7 +2157,7 @@
         </div>
    
     
-    <div class="search-card-result online-events this-month-plus-2 topic2 postcode" id="search-result-B">
+    <div class="search-card-result online-events this-month-plus-2 topic2 not-victoria" id="search-result-B">
 
         <div class="search-card-header">
             <div class="date">
@@ -2157,7 +2212,7 @@
         </div>
     
 
-    <div class="search-card-result in-person-events this-month-plus-2 topic2 postcode" id="search-result-8">
+    <div class="search-card-result in-person-events this-month-plus-2 topic2 victoria" id="search-result-8">
 
         <div class="search-card-header">
             <div class="date">
@@ -2211,7 +2266,7 @@
         </div>
   
     
-    <div class="search-card-result online-events this-month-plus-2 topic1 postcode" id="search-result-H">
+    <div class="search-card-result online-events this-month-plus-2 topic1 victoria" id="search-result-H">
 
         <div class="search-card-header">
             <div class="date">
@@ -2265,7 +2320,7 @@
         
         </div>
 
-    <div class="search-card-result online-events this-month-plus-2 topic1 postcode" id="search-result-C">
+    <div class="search-card-result online-events this-month-plus-2 topic1 not-victoria" id="search-result-C">
 
         <div class="search-card-header">
             <div class="date">
@@ -2319,7 +2374,7 @@
         
         </div>
     
-    <div class="search-card-result in-person-events this-month-plus-2 topic2 postcode" id="search-result-18">
+    <div class="search-card-result in-person-events this-month-plus-2 topic2 victoria" id="search-result-18">
 
         <div class="search-card-header">
             <div class="date">
@@ -2373,7 +2428,7 @@
         </div>
   
 
-    <div class="search-card-result in-person-events this-month-plus-2 topic2 postcode" id="search-result-34">
+    <div class="search-card-result in-person-events this-month-plus-2 topic2 not-victoria" id="search-result-34">
 
         <div class="search-card-header">
             <div class="date">
@@ -2427,7 +2482,7 @@
         
         </div>
     
-    <div class="search-card-result online-events this-month-plus-2 topic1 postcode" id="search-result-10">
+    <div class="search-card-result online-events this-month-plus-2 topic1 victoria" id="search-result-10">
 
         <div class="search-card-header">
             <div class="date">
@@ -2486,7 +2541,7 @@
     
     <!-- On Demand -->
     
-    <div class="search-card-result past-recorded-events topic1" id="search-result-1">
+    <div class="search-card-result past-recorded-events topic1 victoria" id="search-result-1">
 
         <div class="search-card-header">
             <div class="date">
@@ -2540,7 +2595,7 @@
         
         </div>
     
-    <div class="search-card-result past-recorded-events topic1" id="search-result-12">
+    <div class="search-card-result past-recorded-events topic1 victoria" id="search-result-12">
 
         <div class="search-card-header">
             <div class="date">

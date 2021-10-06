@@ -239,7 +239,7 @@ $(document).ready(function () {
     
     
     // FUNCTION TO COUNT and SET active filter counts
-    var all_filter_types = ['event-type', 'date', 'topic', 'postcode'];
+    var all_filter_types = ['event-type', 'date', 'topic', 'location'];
     /*var total_active_filters = function(){
         
         
@@ -392,41 +392,6 @@ $(document).ready(function () {
                    
     }); 
     
-    
-    // Select filter text input options (postcode field)
-    $('.text-field-filter button').on('click', function(){
-        
-        //total_active_filters();
-        
-        var filter_option = $(this).parents(".filter-item-content").find("label").attr('data-option');
-        var filter_label = $(this).parents(".filter-item-content").find("label").attr('data-label');
-        var filter_type = $(this).parents('.filter-item').attr('ID');
-        var postcode_val = $(this).parents('.filter-item-content').find('input').val();
-   
-        $(this).parents('.text-field-filter').find('.active-filters li').text(postcode_val).addClass('selected');
-        $(this).parents('.text-field-item').addClass('selected');
-        
-        sessionStorage.setItem(filter_option, true);
-        sessionStorage.setItem(filter_type + "_value", postcode_val);
-        sessionStorage.setItem(filter_type, 1);
-        
-        var show_class = filter_type + "-show";
-        var hide_class = filter_type + "-hide";
-        
-         
-        $(".search-card-result").each(function(){
-           
-            if ( $(this).hasClass(filter_type)) {
-                $(this).addClass(show_class);
-            } else {
-                $(this).addClass(hide_class);
-            }
-            }); 
-        
-        count_results();
-         
-    });
-    
     $(".text-select li").on('click', function(){
         
         //total_active_filters();
@@ -543,7 +508,7 @@ $(document).ready(function () {
         $('.filter-item .custom-control-input').prop('checked', false).removeClass('selected');
         
         $('.search-card-result').each(function(){
-            $(this).removeClass("event-type-hide event-type-show date-hide date-show topic-hide topic-show postcode-hide postcode-show");
+            $(this).removeClass("event-type-hide event-type-show date-hide date-show topic-hide topic-show location-hide location-show");
         });
         
         count_results();
@@ -563,11 +528,11 @@ $(document).ready(function () {
 
         
     // SET ACTIVE FILTERS ON PAGE LOAD - MULTIPLE SELECT
-    $('#postcode .active-filters li').text(sessionStorage.getItem('postcode_value'));
+    /*$('#postcode .active-filters li').text(sessionStorage.getItem('postcode_value'));*/
     
-    var filter_set_multiple = ['in-person-events', 'online-events', 'past-recorded-events', 'business-finance', 'business-planning', 'contracting-and-tendering', 'customer-service', 'digital-business', 'employing-people', 'exporting', 'government-grant-programs', 'industry-compliance', 'innovation-and-commercialisation', 'marketing', 'networking', 'starting-a-business', 'taxation-and-record-keeping', 'work-health-and-safety', 'past-mmonths', 'this-month', 'this-month-plus-1', 'this-month-plus-2', 'this-month-plus-3', 'postcode_status'];
+    var filter_set_multiple = ['in-person-events', 'online-events', 'past-recorded-events', 'business-finance', 'business-planning', 'contracting-and-tendering', 'customer-service', 'digital-business', 'employing-people', 'exporting', 'government-grant-programs', 'industry-compliance', 'innovation-and-commercialisation', 'marketing', 'networking', 'starting-a-business', 'taxation-and-record-keeping', 'work-health-and-safety', 'past-months', 'this-month', 'this-month-plus-1', 'this-month-plus-2', 'this-month-plus-3', 'australian-capital-territory', 'new-south-wales', 'northern-territory', 'queensland', 'south-australia', 'tasmania', 'victoria', 'western-australia', 'other-australian-territory'];
     
-    var filter_types = ['event-type', 'date', 'topic', 'postcode'];
+    var filter_types = ['event-type', 'date', 'topic', 'location'];
     
     var add_show_classes_on_load = function(item){
         
