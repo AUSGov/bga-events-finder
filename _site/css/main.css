@@ -4385,7 +4385,7 @@ html { overflow: -moz-scrollbars-vertical; overflow-y: scroll; }
 
 #events-finder .results-section .filter-and-results-wrapper .results-wrapper .search-card-result.topic-show.location-hide { display: none; }
 
-#events-finder .results-section .filter-and-results-wrapper .results-wrapper .search-card-result.topic-hide { display: non    e; }
+#events-finder .results-section .filter-and-results-wrapper .results-wrapper .search-card-result.topic-hide { display: none; }
 
 #events-finder .results-section .filter-and-results-wrapper .results-wrapper .search-card-result.location-show { display: block; }
 
