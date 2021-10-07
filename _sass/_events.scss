@@ -516,6 +516,10 @@
             transition-timing-function: ease-in;
             display: block;
             
+            &#search-result-Z.no-filters {
+                display: none !important;
+            }
+            
             &.hidden {
                 display: none !important;
             }
@@ -1204,7 +1208,7 @@
     }
 }
 .page-number-wrapper {
-    display: flex;
+    display: flex !important;
     padding-top: 8px;
     
     .page-number {
